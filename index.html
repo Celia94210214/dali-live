@@ -141,6 +141,82 @@
   .tab-item{padding:10px 20px;font-size:13px;color:#6B7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:.15s;font-weight:500}
   .tab-item.active{color:#4F46E5;border-bottom-color:#4F46E5}
   .tab-item:hover{color:#4F46E5}
+
+  /* ===== LIVE CONSOLE DARK THEME ===== */
+  .console-page{background:#1a1d23;color:#e5e7eb;min-height:100vh;display:flex;flex-direction:column}
+  .console-top{display:flex;align-items:center;padding:8px 16px;background:#111318;border-bottom:1px solid #2a2d35;gap:12px;flex-shrink:0}
+  .console-top .stream-info{display:flex;align-items:center;gap:16px;font-size:12px;color:#9ca3af}
+  .console-top .stream-info .info-val{color:#e5e7eb;font-weight:600}
+  .console-top .mode-toggle{display:flex;background:#2a2d35;border-radius:6px;overflow:hidden;margin:0 auto}
+  .console-top .mode-btn{padding:6px 18px;font-size:12px;color:#9ca3af;cursor:pointer;border:none;background:transparent;font-family:inherit;transition:.15s}
+  .console-top .mode-btn.active{background:#6366f1;color:#fff;border-radius:6px}
+  .console-top .stream-title{font-size:13px;font-weight:600;color:#e5e7eb}
+  .console-top .top-actions{display:flex;gap:8px;align-items:center}
+  .console-top .top-btn{padding:4px 12px;border-radius:6px;border:1px solid #3a3d45;background:transparent;color:#9ca3af;font-size:11px;cursor:pointer;font-family:inherit}
+  .console-top .top-btn:hover{border-color:#6366f1;color:#a5b4fc}
+
+  .console-banner{background:linear-gradient(90deg,#f59e0b22,#f59e0b11);border-bottom:1px solid #f59e0b33;padding:6px 16px;font-size:11px;color:#fbbf24;flex-shrink:0;display:flex;align-items:center;gap:8px}
+
+  .console-body{flex:1;display:flex;overflow:hidden}
+  .console-preview{flex:1;display:flex;flex-direction:column;background:#111318;position:relative}
+  .console-video{flex:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .console-video .preview-placeholder{text-align:center;color:#4b5563}
+  .console-video .preview-placeholder .avatar-circle{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:36px;color:#fff;font-weight:700}
+  .console-video .preview-placeholder p{font-size:14px;margin-top:4px}
+  .console-host-badge{position:absolute;bottom:12px;left:12px;display:flex;align-items:center;gap:8px;background:rgba(0,0,0,.6);padding:6px 14px;border-radius:20px;font-size:12px;backdrop-filter:blur(8px)}
+  .console-host-badge .mic-icon{width:20px;height:20px;border-radius:50%;background:#374151;display:flex;align-items:center;justify-content:center}
+
+  .console-sidebar{width:320px;background:#1e2028;border-left:1px solid #2a2d35;display:flex;flex-direction:column;flex-shrink:0}
+  .console-sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #2a2d35}
+  .console-sidebar-header h3{font-size:14px;font-weight:600;color:#e5e7eb}
+  .console-sidebar-tabs{display:flex;gap:0;border-bottom:1px solid #2a2d35}
+  .console-sidebar-tabs .cs-tab{flex:1;padding:8px;text-align:center;font-size:12px;color:#9ca3af;cursor:pointer;border-bottom:2px solid transparent;transition:.15s}
+  .console-sidebar-tabs .cs-tab.active{color:#a5b4fc;border-bottom-color:#6366f1}
+  .console-chat{flex:1;overflow-y:auto;padding:12px 16px}
+  .console-chat .c-msg{margin-bottom:12px}
+  .console-chat .c-msg-name{font-size:11px;color:#818cf8;font-weight:600;margin-bottom:2px}
+  .console-chat .c-msg-name.sys{color:#6b7280}
+  .console-chat .c-msg-text{font-size:13px;color:#d1d5db;line-height:1.5}
+  .console-chat .c-msg-text.gift{color:#fbbf24;font-weight:500}
+  .console-chat .c-msg-text.system{color:#6b7280;font-style:italic;font-size:12px}
+  .console-input{padding:10px 16px;border-top:1px solid #2a2d35;display:flex;gap:8px;align-items:center}
+  .console-input input{flex:1;background:#2a2d35;border:1px solid #3a3d45;border-radius:8px;padding:8px 14px;color:#e5e7eb;font-size:13px;font-family:inherit}
+  .console-input input:focus{outline:none;border-color:#6366f1}
+  .console-input .send-btn{padding:8px 16px;background:#6366f1;color:#fff;border:none;border-radius:8px;font-size:12px;cursor:pointer;font-family:inherit}
+
+  .console-toolbar{display:flex;align-items:center;padding:10px 16px;background:#111318;border-top:1px solid #2a2d35;gap:4px;flex-shrink:0}
+  .ct-item{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px 14px;border-radius:8px;cursor:pointer;color:#9ca3af;transition:.15s;border:none;background:transparent;font-family:inherit}
+  .ct-item:hover{background:#2a2d35;color:#e5e7eb}
+  .ct-item svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6}
+  .ct-item span{font-size:10px}
+  .ct-item.go-live{background:#6366f1;color:#fff;padding:10px 28px;border-radius:10px;margin-left:auto}
+  .ct-item.go-live:hover{background:#4f46e5}
+  .ct-item.go-live svg{width:20px;height:20px}
+  .ct-item.go-live span{font-size:13px;font-weight:600}
+  .ct-sep{width:1px;height:32px;background:#2a2d35;margin:0 6px}
+
+  /* Annotation toolbar (floating on video) */
+  .anno-toolbar{position:absolute;right:16px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:4px;background:rgba(30,32,40,.9);border-radius:10px;padding:6px;backdrop-filter:blur(10px);border:1px solid #3a3d45}
+  .anno-tool{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#9ca3af;transition:.15s;border:none;background:transparent}
+  .anno-tool:hover{background:#3a3d45;color:#e5e7eb}
+  .anno-tool.active{background:#6366f1;color:#fff}
+  .anno-tool svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
+  .anno-sep{height:1px;background:#3a3d45;margin:2px 4px}
+  .anno-colors{display:flex;gap:3px;padding:4px 2px}
+  .anno-dot{width:14px;height:14px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:.15s}
+  .anno-dot:hover{transform:scale(1.2)}
+  .anno-dot.active{border-color:#fff}
+
+  /* PPT slide mock inside video */
+  .ppt-mock{position:absolute;inset:24px;background:#fff;border-radius:8px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.4)}
+  .ppt-mock .ppt-header{padding:20px 28px 8px;font-size:22px;font-weight:700;color:#1f2937;font-family:'Noto Sans SC'}
+  .ppt-mock .ppt-content{flex:1;padding:8px 28px 20px;font-size:14px;color:#4b5563;line-height:2;font-family:'Noto Sans SC'}
+  .ppt-mock .ppt-anno{position:absolute;font-size:13px;color:#ef4444;font-weight:600;font-family:'Noto Sans SC'}
+  .ppt-mock .ppt-highlight{background:#fef3c7;padding:1px 4px;border-radius:3px}
+
+  /* Hide sidebar + expand main when console is active */
+  body.console-mode .sidebar{display:none}
+  body.console-mode .main{margin-left:0;padding:0;min-height:100vh}
 </style>
 </head>
 <body>
@@ -183,6 +259,12 @@
     <div class="sidebar-item" onclick="switchPage('stats',this)">
       <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
       <span>数据统计</span>
+    </div>
+
+    <div class="nav-section">直播控制</div>
+    <div class="sidebar-item" onclick="switchPage('console',this)" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;border-left-color:#a5b4fc;font-weight:600">
+      <svg viewBox="0 0 24 24" style="stroke:#fff"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="#fff" stroke="none"/></svg>
+      <span>直播控制台</span>
     </div>
 
     <div class="nav-section">运营</div>
@@ -2118,6 +2200,231 @@
   </div>
 </div>
 
+
+<!-- ==================== PAGE 9: 直播控制台 (Dark Theme) ==================== -->
+<div class="page" id="page-console">
+<div class="console-page">
+
+  <!-- Top Bar -->
+  <div class="console-top">
+    <div class="stream-info">
+      <span>📡 高清</span>
+      <span>|</span>
+      <span>在线 <span class="info-val">1,286</span></span>
+      <span>累计 <span class="info-val">3,842</span></span>
+      <span>直播时长 <span class="info-val">00:42:18</span></span>
+    </div>
+    <div class="mode-toggle">
+      <button class="mode-btn active">标准模式</button>
+      <button class="mode-btn">专业模式</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <span class="stream-title">达理学堂 · 高中数学函数专题精讲</span>
+    </div>
+    <div class="top-actions">
+      <button class="top-btn">官网</button>
+      <button class="top-btn">营销插件</button>
+      <button class="top-btn" onclick="switchPage('workspace',document.querySelector('.sidebar-item'))">← 返回后台</button>
+    </div>
+  </div>
+
+  <!-- Warning Banner -->
+  <div class="console-banner">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    共建良好直播环境，直播中不允许涉及虚假宣传、违规荐股等行为。一经发现，平台将及时处置。
+  </div>
+
+  <!-- Main Body -->
+  <div class="console-body">
+
+    <!-- Video Preview Area -->
+    <div class="console-preview">
+      <div class="console-video">
+
+        <!-- PPT Slide Mock -->
+        <div class="ppt-mock">
+          <div class="ppt-header">目录 · 函数专题</div>
+          <div class="ppt-content">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 32px">
+              <div><span style="color:#6366f1;font-weight:600">01</span> &nbsp;函数的基本概念与定义域</div>
+              <div><span style="color:#6366f1;font-weight:600">02</span> &nbsp;一次函数与二次函数</div>
+              <div><span class="ppt-highlight">03</span> &nbsp;<span style="color:#ef4444;font-weight:600">三角函数图像与性质 ← 当前</span></div>
+              <div><span style="color:#6366f1;font-weight:600">04</span> &nbsp;指数函数与对数函数</div>
+              <div><span style="color:#6366f1;font-weight:600">05</span> &nbsp;函数的综合应用</div>
+              <div><span style="color:#6366f1;font-weight:600">06</span> &nbsp;课后练习与答疑</div>
+            </div>
+            <!-- Annotation: red circle and arrow drawn on PPT -->
+            <svg style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none" viewBox="0 0 600 400">
+              <!-- Hand-drawn circle around item 03 -->
+              <ellipse cx="210" cy="148" rx="165" ry="22" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="4,2" opacity=".8"/>
+              <!-- Arrow pointing to it -->
+              <path d="M 420 100 Q 440 130 400 148" fill="none" stroke="#ef4444" stroke-width="2" opacity=".8"/>
+              <text x="425" y="92" font-size="13" fill="#ef4444" font-family="'Noto Sans SC'" font-weight="600">重点！</text>
+              <!-- Underline for emphasis -->
+              <path d="M 90 158 Q 200 162 340 156" fill="none" stroke="#6366f1" stroke-width="2" opacity=".6"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Floating Annotation Toolbar -->
+        <div class="anno-toolbar">
+          <button class="anno-tool active" title="画笔">
+            <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </button>
+          <button class="anno-tool" title="橡皮擦">
+            <svg viewBox="0 0 24 24"><path d="M20 20H7L3 16l9-9 8 8-4 4"/><path d="M6 11l8 8"/></svg>
+          </button>
+          <button class="anno-tool" title="文字">
+            <svg viewBox="0 0 24 24"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+          </button>
+          <button class="anno-tool" title="直线">
+            <svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/></svg>
+          </button>
+          <button class="anno-tool" title="矩形">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+          </button>
+          <button class="anno-tool" title="箭头">
+            <svg viewBox="0 0 24 24"><line x1="5" y1="19" x2="19" y2="5"/><polyline points="10 5 19 5 19 14"/></svg>
+          </button>
+          <div class="anno-sep"></div>
+          <div class="anno-colors">
+            <div class="anno-dot active" style="background:#ef4444" title="红色"></div>
+            <div class="anno-dot" style="background:#6366f1" title="紫色"></div>
+            <div class="anno-dot" style="background:#10b981" title="绿色"></div>
+            <div class="anno-dot" style="background:#f59e0b" title="橙色"></div>
+          </div>
+          <div class="anno-sep"></div>
+          <button class="anno-tool" title="撤销">
+            <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+          </button>
+          <button class="anno-tool" title="清空">
+            <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          </button>
+        </div>
+
+        <!-- Host Badge -->
+        <div class="console-host-badge">
+          <div class="mic-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg></div>
+          <span style="color:#e5e7eb">主播 | 义飞Blake</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Sidebar: Chat -->
+    <div class="console-sidebar">
+      <div class="console-sidebar-header">
+        <h3>互动区</h3>
+        <div style="display:flex;gap:6px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" style="cursor:pointer"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" style="cursor:pointer"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </div>
+      </div>
+      <div class="console-sidebar-tabs">
+        <div class="cs-tab active">聊天</div>
+        <div class="cs-tab">提问</div>
+        <div class="cs-tab">礼物</div>
+        <div class="cs-tab">管理</div>
+      </div>
+      <div class="console-chat">
+        <div class="c-msg">
+          <div class="c-msg-name sys">📢 直播助手</div>
+          <div class="c-msg-text system">欢迎进入直播间：<br>1. 请自行调节音量至合适状态<br>2. 讲师发布的内容会显示在主画面，讨论区可发言互动</div>
+        </div>
+        <div class="c-msg">
+          <div class="c-msg-name">张同学 <span style="background:#6366f1;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:4px">LV5</span></div>
+          <div class="c-msg-text">老师，sin(x) 的周期是怎么推导出来的？</div>
+        </div>
+        <div class="c-msg">
+          <div class="c-msg-name" style="color:#10b981">李同学</div>
+          <div class="c-msg-text">周期 T = 2π/|ω|，看公式里 x 前面的系数</div>
+        </div>
+        <div class="c-msg">
+          <div class="c-msg-name sys">🔔 系统消息</div>
+          <div class="c-msg-text system">王同学 进入了直播间</div>
+        </div>
+        <div class="c-msg">
+          <div class="c-msg-name" style="color:#f59e0b">刘同学</div>
+          <div class="c-msg-text">👏👏👏 讲得太清楚了，终于搞懂了！</div>
+        </div>
+        <div class="c-msg">
+          <div class="c-msg-name" style="color:#8b5cf6">赵同学 <span style="background:#f59e0b;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:4px">学霸</span></div>
+          <div class="c-msg-text">老师，y = 2sin(3x + π/6) 的振幅和相位分别是多少？</div>
+        </div>
+        <div class="c-msg">
+          <div class="c-msg-name" style="color:#ec4899">陈同学</div>
+          <div class="c-msg-text gift">🎁 送出 小心心 × 66</div>
+        </div>
+        <div class="c-msg">
+          <div class="c-msg-name" style="color:#06b6d4">周同学</div>
+          <div class="c-msg-text">振幅 A=2，初相位 φ=π/6 对吧？</div>
+        </div>
+        <div class="c-msg">
+          <div class="c-msg-name sys">🎁 礼物消息</div>
+          <div class="c-msg-text gift">孙同学 送出 鲜花 × 99 (¥188.00)</div>
+        </div>
+        <div class="c-msg">
+          <div class="c-msg-name" style="color:#f97316">吴同学</div>
+          <div class="c-msg-text">图像平移那块能不能再讲一遍？左加右减有点混</div>
+        </div>
+        <div class="c-msg">
+          <div class="c-msg-name" style="color:#6366f1">郑同学 <span style="background:#6366f1;color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;margin-left:4px">月卡</span></div>
+          <div class="c-msg-text">高考考这种题的概率大吗？</div>
+        </div>
+      </div>
+      <div class="console-input">
+        <input type="text" placeholder="说点什么…">
+        <button class="send-btn">发送</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Toolbar -->
+  <div class="console-toolbar">
+    <button class="ct-item">
+      <svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+      <span>静音</span>
+    </button>
+    <button class="ct-item">
+      <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+      <span>摄像头</span>
+    </button>
+    <div class="ct-sep"></div>
+    <button class="ct-item">
+      <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      <span>共享演示</span>
+    </button>
+    <button class="ct-item">
+      <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><circle cx="12" cy="10" r="3"/></svg>
+      <span>白板</span>
+    </button>
+    <div class="ct-sep"></div>
+    <button class="ct-item">
+      <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+      <span>邀请观众</span>
+    </button>
+    <button class="ct-item">
+      <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span>管理成员</span>
+    </button>
+    <div class="ct-sep"></div>
+    <button class="ct-item">
+      <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      <span>工具箱</span>
+    </button>
+    <button class="ct-item">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <span>设置</span>
+    </button>
+    <!-- Go Live Button -->
+    <button class="ct-item go-live">
+      <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      <span>开始直播</span>
+    </button>
+  </div>
+
+</div><!-- end console-page -->
+</div>
+
 </div><!-- end main -->
 
 <!-- ===== CHART.JS ===== -->
@@ -2128,7 +2435,13 @@ function switchPage(pageId, el) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.sidebar-item').forEach(s => s.classList.remove('active'));
   document.getElementById('page-' + pageId).classList.add('active');
-  el.classList.add('active');
+  if (el) el.classList.add('active');
+  // Console mode: hide sidebar, full-width dark theme
+  if (pageId === 'console') {
+    document.body.classList.add('console-mode');
+  } else {
+    document.body.classList.remove('console-mode');
+  }
   if (pageId === 'stats') initStatsCharts();
 }
 
