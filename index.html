@@ -1567,7 +1567,7 @@
             <th style="width:50px">头像</th>
             <th>讲师姓名</th>
             <th>等级</th>
-            <th>学科</th>
+            <th>主播介绍</th>
             <th>直播场次</th>
             <th>累计观看</th>
             <th>评分</th>
@@ -1583,7 +1583,7 @@
               <div style="font-size:11px;color:#9CA3AF">超级管理员</div>
             </td>
             <td><span class="pill purple">金牌讲师</span></td>
-            <td>数学</td>
+            <td style="max-width:200px;font-size:12px;color:#6B7280">资深数学讲师，10年教学经验，擅长通俗易懂地讲解复杂概念</td>
             <td>86</td>
             <td>12.8万</td>
             <td><span style="color:#F59E0B">&#9733;</span> 4.9</td>
@@ -1600,7 +1600,7 @@
               <div style="font-size:11px;color:#9CA3AF">ID: INS-1002</div>
             </td>
             <td><span class="pill purple">金牌讲师</span></td>
-            <td>数学</td>
+            <td style="max-width:200px;font-size:12px;color:#6B7280">高考数学阅卷组成员，专注导数与解析几何突破</td>
             <td>72</td>
             <td>9.6万</td>
             <td><span style="color:#F59E0B">&#9733;</span> 4.8</td>
@@ -1618,7 +1618,7 @@
               <div style="font-size:11px;color:#9CA3AF">ID: INS-1003</div>
             </td>
             <td><span class="pill purple">金牌讲师</span></td>
-            <td>英语</td>
+            <td style="max-width:200px;font-size:12px;color:#6B7280">前新东方名师，雅思8.5分，口语与写作专项</td>
             <td>65</td>
             <td>8.2万</td>
             <td><span style="color:#F59E0B">&#9733;</span> 4.9</td>
@@ -1636,7 +1636,7 @@
               <div style="font-size:11px;color:#9CA3AF">ID: INS-1004</div>
             </td>
             <td><span class="pill blue">高级讲师</span></td>
-            <td>物理</td>
+            <td style="max-width:200px;font-size:12px;color:#6B7280">清华物理硕士，竞赛金牌教练，力学与电磁学专家</td>
             <td>48</td>
             <td>5.7万</td>
             <td><span style="color:#F59E0B">&#9733;</span> 4.7</td>
@@ -1654,7 +1654,7 @@
               <div style="font-size:11px;color:#9CA3AF">ID: INS-1005</div>
             </td>
             <td><span class="pill blue">高级讲师</span></td>
-            <td>编程</td>
+            <td style="max-width:200px;font-size:12px;color:#6B7280">前字节跳动工程师，Python/算法教学，ACM金牌</td>
             <td>53</td>
             <td>6.4万</td>
             <td><span style="color:#F59E0B">&#9733;</span> 4.8</td>
@@ -1672,7 +1672,7 @@
               <div style="font-size:11px;color:#9CA3AF">ID: INS-1011</div>
             </td>
             <td><span class="pill orange">普通讲师</span></td>
-            <td>美术</td>
+            <td style="max-width:200px;font-size:12px;color:#6B7280">中央美院毕业，素描与水彩教学，艺考辅导经验丰富</td>
             <td>28</td>
             <td>2.1万</td>
             <td><span style="color:#F59E0B">&#9733;</span> 4.6</td>
@@ -1690,7 +1690,7 @@
               <div style="font-size:11px;color:#9CA3AF">ID: INS-1015</div>
             </td>
             <td><span class="pill orange">普通讲师</span></td>
-            <td>音乐</td>
+            <td style="max-width:200px;font-size:12px;color:#6B7280">音乐学院钢琴专业，乐理与视唱练耳教学</td>
             <td>15</td>
             <td>1.3万</td>
             <td><span style="color:#F59E0B">&#9733;</span> 4.5</td>
@@ -1707,7 +1707,7 @@
               <div style="font-size:11px;color:#9CA3AF">ID: INS-1018</div>
             </td>
             <td><span class="pill blue">高级讲师</span></td>
-            <td>英语</td>
+            <td style="max-width:200px;font-size:12px;color:#6B7280">剑桥CELTA认证，专注少儿英语与阅读写作</td>
             <td>37</td>
             <td>4.5万</td>
             <td><span style="color:#F59E0B">&#9733;</span> 4.7</td>
@@ -2070,154 +2070,220 @@
   <div class="modal-overlay" id="create-live-modal" onclick="if(event.target===this)closeCreateLive()">
     <div class="modal-box">
       <div class="modal-header">
-        <h3>创建直播</h3>
-        <button class="modal-close" onclick="closeCreateLive()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
+        <h3 id="modal-title">创建直播</h3>
+        <div style="display:flex;align-items:center;gap:12px">
+          <div id="modal-steps" style="display:flex;gap:6px;align-items:center">
+            <span class="step-dot active" id="step-dot-1" style="width:8px;height:8px;border-radius:50%;background:#6366f1;transition:.2s"></span>
+            <span style="width:20px;height:2px;background:#3a3d45;border-radius:1px"></span>
+            <span class="step-dot" id="step-dot-2" style="width:8px;height:8px;border-radius:50%;background:#3a3d45;transition:.2s"></span>
+          </div>
+          <button class="modal-close" onclick="closeCreateLive()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
       </div>
-      <div class="modal-body">
 
-        <!-- Host Info -->
-        <div style="font-size:11px;font-weight:600;color:#818cf8;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px">主播信息</div>
+      <!-- STEP 1: Basic Info -->
+      <div id="modal-step-1">
+        <div class="modal-body">
+          <div style="font-size:11px;font-weight:600;color:#818cf8;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px">主播信息</div>
 
-        <div class="form-row">
-          <div class="avatar-upload">
-            <div class="avatar-circle-lg" title="点击更换头像">义</div>
-            <div>
-              <div style="font-size:13px;font-weight:600;color:#e5e7eb;margin-bottom:4px">主播头像</div>
-              <div style="font-size:11px;color:#6b7280;margin-bottom:8px">支持 JPG / PNG，建议 200×200px</div>
-              <button class="modal-btn" style="padding:5px 14px;font-size:11px">上传头像</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-row-2col">
-          <div class="form-row" style="margin-bottom:0">
-            <label class="form-label">主播姓名<span class="required">*</span></label>
-            <input class="form-input" type="text" value="义飞Blake" placeholder="输入主播姓名">
-          </div>
-          <div class="form-row" style="margin-bottom:0">
-            <label class="form-label">主播等级</label>
-            <select class="form-select">
-              <option>金牌讲师</option>
-              <option>高级讲师</option>
-              <option>普通讲师</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row" style="margin-top:18px">
-          <label class="form-label">主播介绍</label>
-          <textarea class="form-input" placeholder="简单介绍一下自己和本次直播内容…">资深数学讲师，10年教学经验，擅长将复杂概念用通俗易懂的方式讲解。本次直播聚焦高中函数专题，适合高一至高三学生。</textarea>
-        </div>
-
-        <div style="font-size:11px;font-weight:600;color:#818cf8;margin:20px 0 12px;text-transform:uppercase;letter-spacing:.5px">直播设置</div>
-
-        <!-- Cover Image -->
-        <div class="form-row">
-          <label class="form-label">直播封面<span class="required">*</span></label>
-          <div class="upload-zone cover-upload">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <div class="upload-text" style="margin-top:8px">点击上传直播封面</div>
-            <div class="upload-hint">推荐 16:9 比例，1920×1080px，支持 JPG / PNG</div>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <label class="form-label">直播标题<span class="required">*</span></label>
-          <input class="form-input" type="text" value="高中数学 · 函数专题精讲" placeholder="输入直播标题">
-        </div>
-
-        <div class="form-row-2col">
-          <div class="form-row" style="margin-bottom:0">
-            <label class="form-label">学科分类<span class="required">*</span></label>
-            <select class="form-select">
-              <option selected>数学</option>
-              <option>英语</option>
-              <option>物理</option>
-              <option>化学</option>
-              <option>编程</option>
-              <option>美术</option>
-              <option>音乐</option>
-            </select>
-          </div>
-          <div class="form-row" style="margin-bottom:0">
-            <label class="form-label">适合年级</label>
-            <select class="form-select">
-              <option>不限</option>
-              <option>高一</option>
-              <option selected>高二</option>
-              <option>高三</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row" style="margin-top:18px">
-          <label class="form-label">直播标签</label>
-          <div class="form-tags">
-            <span class="form-tag active">函数</span>
-            <span class="form-tag active">三角函数</span>
-            <span class="form-tag active">高考</span>
-            <span class="form-tag">导数</span>
-            <span class="form-tag">极值</span>
-            <span class="form-tag">不等式</span>
-            <span class="form-tag">概率统计</span>
-            <span class="form-tag">解析几何</span>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <label class="form-label">直播简介</label>
-          <textarea class="form-input" placeholder="详细描述本次直播的教学大纲和要点…" style="min-height:60px">本节课系统讲解三角函数的图像与性质，包括正弦、余弦、正切函数的周期性、单调性、对称性，以及三角函数图像的平移变换技巧。适合正在备战高考的同学。</textarea>
-        </div>
-
-        <div style="font-size:11px;font-weight:600;color:#818cf8;margin:20px 0 12px;text-transform:uppercase;letter-spacing:.5px">推流设置（TRTC 自动配置）</div>
-
-        <div class="form-row-2col">
-          <div class="form-row" style="margin-bottom:0">
-            <label class="form-label">推流模式</label>
-            <select class="form-select">
-              <option selected>TRTC SDK 直推</option>
-              <option>OBS + CDN</option>
-            </select>
-          </div>
-          <div class="form-row" style="margin-bottom:0">
-            <label class="form-label">画质预设</label>
-            <select class="form-select">
-              <option>标清 720p / 1500kbps</option>
-              <option selected>高清 1080p / 3200kbps</option>
-              <option>超清 2K / 6000kbps</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row" style="margin-top:18px">
-          <label class="form-label">课前课件（可选）</label>
-          <div class="upload-zone" style="padding:16px">
-            <div style="display:flex;align-items:center;gap:12px;justify-content:center">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              <div style="text-align:left">
-                <div class="upload-text">拖拽或点击上传课件</div>
-                <div class="upload-hint">支持 PPT / PDF / Word，单文件 ≤ 100MB</div>
+          <div class="form-row">
+            <div class="avatar-upload">
+              <div class="avatar-circle-lg" title="点击更换头像">义</div>
+              <div>
+                <div style="font-size:13px;font-weight:600;color:#e5e7eb;margin-bottom:4px">主播头像</div>
+                <div style="font-size:11px;color:#6b7280;margin-bottom:8px">支持 JPG / PNG，建议 200×200px</div>
+                <button class="modal-btn" style="padding:5px 14px;font-size:11px">上传头像</button>
               </div>
             </div>
           </div>
-          <!-- Uploaded file preview -->
-          <div style="display:flex;align-items:center;gap:10px;margin-top:10px;padding:8px 12px;background:#111318;border-radius:8px;border:1px solid #2a2d35">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <div style="flex:1">
-              <div style="font-size:12px;color:#e5e7eb;font-weight:500">高中数学_函数专题.pptx</div>
-              <div style="font-size:10px;color:#6b7280">12.8 MB · 已上传</div>
+
+          <div class="form-row-2col">
+            <div class="form-row" style="margin-bottom:0">
+              <label class="form-label">主播姓名<span class="required">*</span></label>
+              <input class="form-input" type="text" value="义飞Blake" placeholder="输入主播姓名">
             </div>
-            <span style="font-size:10px;color:#34d399;font-weight:500">✓ 就绪</span>
+            <div class="form-row" style="margin-bottom:0">
+              <label class="form-label">主播等级</label>
+              <select class="form-select">
+                <option>金牌讲师</option>
+                <option>高级讲师</option>
+                <option>普通讲师</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row" style="margin-top:18px">
+            <label class="form-label">主播介绍</label>
+            <textarea class="form-input" placeholder="简单介绍一下自己…">资深数学讲师，10年教学经验，擅长将复杂概念用通俗易懂的方式讲解。</textarea>
+          </div>
+
+          <div style="font-size:11px;font-weight:600;color:#818cf8;margin:20px 0 12px;text-transform:uppercase;letter-spacing:.5px">直播信息</div>
+
+          <div class="form-row">
+            <label class="form-label">直播封面<span class="required">*</span></label>
+            <div class="upload-zone cover-upload">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div class="upload-text" style="margin-top:8px">点击上传直播封面</div>
+              <div class="upload-hint">推荐 16:9 比例，1920×1080px，支持 JPG / PNG</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label">直播标题<span class="required">*</span></label>
+            <input class="form-input" type="text" value="高中数学 · 函数专题精讲" placeholder="输入直播标题">
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-row" style="margin-bottom:0">
+              <label class="form-label">学科分类<span class="required">*</span></label>
+              <select class="form-select">
+                <option selected>数学</option>
+                <option>英语</option>
+                <option>物理</option>
+                <option>化学</option>
+                <option>编程</option>
+                <option>美术</option>
+                <option>音乐</option>
+              </select>
+            </div>
+            <div class="form-row" style="margin-bottom:0">
+              <label class="form-label">适合年级</label>
+              <select class="form-select">
+                <option>不限</option>
+                <option>高一</option>
+                <option selected>高二</option>
+                <option>高三</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row" style="margin-top:18px">
+            <label class="form-label">直播标签</label>
+            <div class="form-tags">
+              <span class="form-tag active">函数</span>
+              <span class="form-tag active">三角函数</span>
+              <span class="form-tag active">高考</span>
+              <span class="form-tag">导数</span>
+              <span class="form-tag">极值</span>
+              <span class="form-tag">不等式</span>
+              <span class="form-tag">概率统计</span>
+              <span class="form-tag">解析几何</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label">直播简介</label>
+            <textarea class="form-input" placeholder="详细描述本次直播的教学大纲和要点…" style="min-height:60px">本节课系统讲解三角函数的图像与性质，包括正弦、余弦、正切函数的周期性、单调性、对称性，以及三角函数图像的平移变换技巧。</textarea>
           </div>
         </div>
-
+        <div class="modal-footer">
+          <button class="modal-btn" onclick="closeCreateLive()">取消</button>
+          <button class="modal-btn" style="border-color:#3a3d45;color:#e5e7eb">保存草稿</button>
+          <button class="modal-btn primary" onclick="goToStep2()">创建直播 →</button>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button class="modal-btn" onclick="closeCreateLive()">取消</button>
-        <button class="modal-btn" style="border-color:#3a3d45;color:#e5e7eb">保存草稿</button>
-        <button class="modal-btn primary" onclick="closeCreateLive()">创建并开播</button>
+
+      <!-- STEP 2: Live Settings (hidden initially) -->
+      <div id="modal-step-2" style="display:none">
+        <div class="modal-body">
+          <div style="font-size:11px;font-weight:600;color:#818cf8;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px">推流设置（TRTC 自动配置）</div>
+
+          <div class="form-row-2col">
+            <div class="form-row" style="margin-bottom:0">
+              <label class="form-label">推流模式</label>
+              <select class="form-select">
+                <option selected>TRTC SDK 直推</option>
+                <option>OBS + CDN</option>
+              </select>
+            </div>
+            <div class="form-row" style="margin-bottom:0">
+              <label class="form-label">画质预设</label>
+              <select class="form-select">
+                <option>标清 720p / 1500kbps</option>
+                <option selected>高清 1080p / 3200kbps</option>
+                <option>超清 2K / 6000kbps</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- TRTC auto-config summary -->
+          <div style="margin-top:18px;padding:14px 16px;background:#111318;border-radius:10px;border:1px solid #2a2d35">
+            <div style="font-size:12px;font-weight:600;color:#e5e7eb;margin-bottom:8px">TRTC 自动分配</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:11px">
+              <div style="color:#6b7280">App ID</div><div style="color:#e5e7eb;font-family:monospace">1400000000</div>
+              <div style="color:#6b7280">Room ID</div><div style="color:#e5e7eb;font-family:monospace">#58291 (自动生成)</div>
+              <div style="color:#6b7280">User Sig</div><div style="color:#34d399;font-family:monospace">✓ 已签发</div>
+              <div style="color:#6b7280">CDN Stream</div><div style="color:#34d399;font-family:monospace">✓ math_20260529</div>
+            </div>
+          </div>
+
+          <div style="font-size:11px;font-weight:600;color:#818cf8;margin:24px 0 12px;text-transform:uppercase;letter-spacing:.5px">课前课件</div>
+
+          <div class="form-row">
+            <div class="upload-zone" style="padding:16px">
+              <div style="display:flex;align-items:center;gap:12px;justify-content:center">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <div style="text-align:left">
+                  <div class="upload-text">拖拽或点击上传课件</div>
+                  <div class="upload-hint">支持 PPT / PDF / Word，单文件 ≤ 100MB</div>
+                </div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;margin-top:10px;padding:8px 12px;background:#111318;border-radius:8px;border:1px solid #2a2d35">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <div style="flex:1">
+                <div style="font-size:12px;color:#e5e7eb;font-weight:500">高中数学_函数专题.pptx</div>
+                <div style="font-size:10px;color:#6b7280">12.8 MB · 已上传</div>
+              </div>
+              <span style="font-size:10px;color:#34d399;font-weight:500">✓ 就绪</span>
+            </div>
+          </div>
+
+          <div style="font-size:11px;font-weight:600;color:#818cf8;margin:24px 0 12px;text-transform:uppercase;letter-spacing:.5px">互动设置</div>
+
+          <div class="form-row-2col">
+            <div class="form-row" style="margin-bottom:0">
+              <label class="form-label">连麦模式</label>
+              <select class="form-select">
+                <option selected>允许举手连麦</option>
+                <option>仅讲师发言</option>
+                <option>自由连麦</option>
+              </select>
+            </div>
+            <div class="form-row" style="margin-bottom:0">
+              <label class="form-label">白板互动</label>
+              <select class="form-select">
+                <option selected>讲师标注</option>
+                <option>允许学生标注</option>
+                <option>关闭白板</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row" style="margin-top:18px">
+            <label class="form-label">聊天设置</label>
+            <div style="display:flex;gap:16px;flex-wrap:wrap">
+              <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:#9ca3af;cursor:pointer">
+                <input type="checkbox" checked style="accent-color:#6366f1"> 开启弹幕
+              </label>
+              <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:#9ca3af;cursor:pointer">
+                <input type="checkbox" checked style="accent-color:#6366f1"> 敏感词过滤
+              </label>
+              <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:#9ca3af;cursor:pointer">
+                <input type="checkbox" style="accent-color:#6366f1"> 进入审核
+              </label>
+              <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:#9ca3af;cursor:pointer">
+                <input type="checkbox" style="accent-color:#6366f1"> 慢速模式
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-btn" onclick="backToStep1()">← 返回上一步</button>
+          <button class="modal-btn primary" onclick="closeCreateLive()">开始直播</button>
+        </div>
       </div>
     </div>
   </div>
@@ -2356,6 +2422,24 @@ function openCreateLive() {
 function closeCreateLive() {
   const modal = document.getElementById('create-live-modal');
   if (modal) modal.classList.remove('show');
+  // Reset to step 1 on close
+  backToStep1();
+}
+
+// Modal step navigation
+function goToStep2() {
+  document.getElementById('modal-step-1').style.display = 'none';
+  document.getElementById('modal-step-2').style.display = 'block';
+  document.getElementById('modal-title').textContent = '直播设置';
+  document.getElementById('step-dot-1').style.background = '#34d399';
+  document.getElementById('step-dot-2').style.background = '#6366f1';
+}
+function backToStep1() {
+  document.getElementById('modal-step-1').style.display = 'block';
+  document.getElementById('modal-step-2').style.display = 'none';
+  document.getElementById('modal-title').textContent = '创建直播';
+  document.getElementById('step-dot-1').style.background = '#6366f1';
+  document.getElementById('step-dot-2').style.background = '#3a3d45';
 }
 </script>
 </body>
